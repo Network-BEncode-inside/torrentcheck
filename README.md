@@ -2,9 +2,11 @@
 
 torrentcheck - catalog a `.torrent` file and optionally verify content hashes.
 
-Usage: `torrentcheck torrent-file [-p content-path] [-n] [-h] [-c] [-d]`
+Usage: `torrentcheck torrent-file [-p content-path] [-e] [-n] [-h] [-c] [-d]`
 
 Options:  
+`-p content-path` path of content data,  
+`-e str` encoding name (iconv),  
 `-n` suppresses progress count,  
 `-h` shows all hash values,  
 `-c` or `-d` uses comma or dot formatted byte counts.

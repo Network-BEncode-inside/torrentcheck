@@ -16,6 +16,8 @@
 #include <malloc.h>
 #include <string.h>
 
+#define TORRENTCHECK_VERSION "1.2"
+
 #ifdef ICONV_IMPLEMENTATION
 #include <iconv.h>
 #endif
@@ -532,16 +534,20 @@ int main(int argc,char* argv[])
 
     if (torrentFile == NULL)
     {
-        printf("torrentcheck - catalog a .torrent file and optionally verify content hashes\n");
-        printf("Usage: torrentcheck torrent-file [-p content-path] [-n] [-h] [-c] [-d]\n");
+        printf("TorrentCheck version %s\n", TORRENTCHECK_VERSION);
+        printf("Catalog a .torrent file and optionally verify content hashes\n");
+        printf("Usage:\n");
+        printf("\ttorrentcheck torrent-file [-p content-path] [-e str] [-n] [-h] [-c] [-d]\n");
         printf("Options:\n");
-        printf("\t-n suppresses progress count,\n");
-        printf("\t-h shows all hash values,\n");
-        printf("\t-c or -d uses comma or dot formatted byte counts.\n");
+        printf("\t-p content-path    path of content data,\n");
+        printf("\t-e str    encoding name (iconv),\n");
+        printf("\t-n    suppresses progress count,\n");
+        printf("\t-h    shows all hash values,\n");
+        printf("\t-c or -d    uses comma or dot formatted byte counts.\n");
         printf("Returns 0 if successful, nonzero return code if errors found.\n");
         printf("\n");
         printf("Option:\n");
-        printf("\t-sha1 [optional hash] acts as a simple SHA1 filter.\n");
+        printf("\t-sha1 [optional hash]    acts as a simple SHA1 filter.\n");
         printf("If -sha1 is followed by a hex hash, the return code will be zero\n");
         printf("on match and nonzero otherwise.\n");
         printf("\n");

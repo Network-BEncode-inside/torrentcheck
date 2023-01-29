@@ -1,4 +1,4 @@
-.TH torrentcheck "1" "1.10" "07 Jan 2023" "User Manual"
+.TH torrentcheck "1" "1.20" "29 Jan 2023" "User Manual"
 
 .SH NAME
 torrentcheck
@@ -12,13 +12,16 @@ torrentcheck torrent-file [-p content-path] [-n] [-h] [-c] [-d]
 .SH OPTIONS
 .TP
 -p content-path
-path of content data
+path of content data,
+.TP
+-e str
+encoding name (iconv),
 .TP
 -n
-suppresses progress count
+suppresses progress count,
 .TP
 -h
-shows all hash values
+shows all hash values,
 .TP
 -c or -d
 uses comma or dot formatted byte counts.
@@ -39,7 +42,7 @@ torrentcheck my.torrent
 Mike Ingle <inglem@pobox.com>
 
 .SH SEE ALSO
-torreadwrite(1), ctorrent(1), aria2c(1)
+torreadwrite(1), ctorrent(1), aria2c(1), iconv(1)
 
 .SH CONTACTS
 Website: https://github.com/ximellon/torrentcheck
